@@ -1,0 +1,31 @@
+<view class="body">
+  <view class="title">提交构思</view>
+  <view class="input-content">
+    <view class="name">姓名</view>
+    <input type="text" placeholder="请输入名字" class="content-input" bindinput="inputName"></input>
+    <view class="name">手机</view>
+    <input type="text" placeholder="请输入联系方式" class="content-input" bindinput="inputPhone"></input>
+    <view class="name">所属公司/结构/组织</view>
+    <input type="text" placeholder="请输入所属公司/结构/组织" class="content-input" bindinput="inputCompany"></input>
+    <view class="name">邮箱</view>
+    <input type="text" placeholder="请输入邮箱地址" class="content-input" bindinput="inputEmail"></input>
+    <view class="name">构思详细描述</view>
+    <view class="content-textarea">
+      <textarea name="" id="" maxlength="-1 " cursor-spacing="30"
+        style="font-size: 18px;width: 690rpx; overflow: scroll;" bindinput="inputDetail"></textarea>
+    </view>
+  </view>
+  <view class="file-upload">
+    <view class="upload">上传文件</view>
+    <view class="file-choose" bindtap="uploadFile" hover-class="click">选择文件</view>
+    <view class="filename" wx:if="{{filename}}">{{filename}}
+      <image src="/image/del.png" style="margin-left: 10rpx;" bindtap="deleteFile"></image>
+    </view>
+    <view class="tip">仅支持doc、docx、pdf文件，单个文件不超过10M</view>
+    <view class="task_tip">任务码：</view>
+    <view class="input_task">
+      <input style="font-size:12px;" type="text" placeholder="非必填" value="{{taskNumber}}"></input>
+    </view>
+  </view>
+  <view class="submit" hover-class="click">提交</view>
+</view>

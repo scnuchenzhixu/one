@@ -1,0 +1,60 @@
+<view class="body">
+  <view class="login" style="padding-top:{{statusBarHeight}}px">
+    <view class="title">个人中心</view>
+    <view class="message" bindtap="getUserMessage">
+      <view class="src_image" catchtap="{{hasUserInfo ? 'changeSrc' : 'getUserMessage'}}">
+        <image src="{{hasUserInfo ? src : '/image/src_img.png'}}" mode="aspectFill"></image>
+      </view>
+      <block wx:if="{{hasUserInfo}}">
+        <view class="nick_name">{{nickName}}</view>
+      </block>
+      <block wx:else>
+        <view class="nick_name">点击登陆</view>
+      </block>
+    </view>
+  </view>
+  <view class="application">
+    <view class="list" hover-class="change" bindtap="showMotal">
+      <image class="app_icon" src="/image/nickname.png"></image>
+      <view class="app_name">修改昵称</view>
+      <image class="go_to" src="/image/go_to.png"></image>
+    </view>
+    <view class="list" hover-class="change" bindtap="toVip">
+      <image class="app_icon" src="/image/vip.png"></image>
+      <view class="app_name">会员中心</view>
+      <image class="go_to" src="/image/go_to.png"></image>
+    </view>
+    <view class="list" hover-class="change">
+      <image class="app_icon" src="/image/idea.png"></image>
+      <view class="app_name">我的构思</view>
+      <image class="go_to" src="/image/go_to.png"></image>
+    </view>
+    <view class="list" style="margin-top: 50rpx" hover-class="change">
+      <image class="app_icon" src="/image/kefu.png"></image>
+      <view class="app_name">联系客服</view>
+      <image class="go_to" src="/image/go_to.png"></image>
+    </view>
+    <view class="list" hover-class="change">
+      <image class="app_icon" src="/image/wechat.png"></image>
+      <view class="app_name">关注公众号</view>
+      <image class="go_to" src="/image/go_to.png"></image>
+    </view>
+    <view class="list" hover-class="change">
+      <image class="app_icon" src="/image/team.png"></image>
+      <view class="app_name">关于我们</view>
+      <image class="go_to" src="/image/go_to.png"></image>
+    </view>
+  </view>
+  <view class="modal" wx:if="{{showMotal}}" bindtap="hideMotal">
+    <view class="screen" catchtap="stop">
+      <view class="tip">请输入你的昵称</view>
+      <view class="input">
+        <input type="text" class="input_content" placeholder="这里输入昵称" bindinput="inputNickName"  value=""/>
+      </view>
+      <view class="choose">
+        <view class="choose_content left" hover-class="change" catchtap="cencel">取消</view>
+        <view class="choose_content right" hover-class="change" catchtap="sure">确定</view>
+      </view>
+    </view>
+  </view>
+</view>

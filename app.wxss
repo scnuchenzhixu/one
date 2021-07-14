@@ -1,0 +1,4 @@
+.click{
+  transform: scale(0.95);
+  transition: all .1s linear;
+}

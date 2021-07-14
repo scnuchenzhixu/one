@@ -1,0 +1,129 @@
+.body{
+  width: 100vw;
+  height: 100vh;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.article{
+  width: 710rpx;
+  height: 500rpx;
+  overflow: scroll;
+  padding: 15rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #5f357a;
+  border-radius: 10rpx;
+  /* color: #928f8f; */
+}
+.title{
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 550;
+}
+.content{
+  font-size: 13px;
+}
+.line-content {
+  width: 750rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.oper{
+  width: 710rpx;
+  height: 100rpx;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.analysis{
+  width: 190rpx;
+  height: 60rpx;
+  position: relative;
+  border-radius: 15rpx;
+  background-color: #5f357a;
+  color: #fff;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 13px;
+}
+.go_to{
+  width: 130rpx;
+  position: relative;
+  left: 150rpx;
+}
+.radio_copy{
+  width: 240rpx;
+  height: 60rpx;
+  position: relative;
+  left: 170rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.radio_copy image{
+  width: 35rpx;
+  height: 35rpx;
+}
+.float_img{
+  width: 45rpx;
+  height: 45rpx;
+  position: absolute;
+}
+.wenzi{
+  font-size: 12px;
+  color: #5f357a;
+}
+.line {
+  width: 10rpx;
+  height: 40rpx;
+  background-color: #5f357a;
+}
+
+.line-title {
+  height: 45rpx;
+  line-height: 45rpx;
+  text-align: center;
+  color: #5f357a;
+  margin-left: 20rpx;
+}
+.about_content{
+  position: relative;
+  width: 710rpx;
+  height: 250rpx;
+  padding: 15rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #928f8f;
+  border-top: 10rpx solid #FF69B4;
+  border-radius: 0 0 10rpx 10rpx;
+  background-color: #fff;
+  box-shadow:inset 5px 5px 10px #000;
+  box-shadow:-2px -2px 10px #fff;
+}
+.about_img{
+  width: 300rpx;
+  height: 170rpx;
+}
+.about_title{
+  position: absolute;
+  left: 330rpx; 
+  top: 20rpx;
+  font-size: 20px;
+  font-weight: 600;
+}
+.about_message{
+  position: absolute;
+  left: 330rpx; 
+  top: 85rpx;
+  width: 380rpx;
+  height: 105rpx;
+  font-size: 12px;
+  color: #928f8f;
+}
+.about_time{
+  color: #5f357a;
+  font-size: 14px;
+}

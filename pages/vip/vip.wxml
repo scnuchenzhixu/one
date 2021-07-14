@@ -1,0 +1,10 @@
+<view class="body">
+  <view class="header" style="padding-top:{{statusBarHeight}}px;">
+    <view  class="head_img" bindtap="back">
+      <image src="/image/back.png"></image>
+    </view>
+    <view class="head_title">会员中心</view>
+    <view class="card">
+    </view>
+  </view>
+</view>

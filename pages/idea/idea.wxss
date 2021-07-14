@@ -1,0 +1,118 @@
+.body{
+  width: 100vw;
+  height: 100vh;
+  padding:15rpx 30rpx;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+.title{
+  width: 100%;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #5f357a;
+}
+.name{
+  width: 100%;
+  height: 45rpx;
+  line-height: 50rpx;
+  color: #5f357a;
+  margin-bottom: 10rpx;
+}
+.content-input{
+  width: 100%;
+  height: 65rpx;
+  padding: 5rpx;
+  box-sizing: border-box;
+  border-radius: 15rpx;
+  border: 3rpx solid #5f357a;
+  margin-bottom: 25rpx;
+}
+.content-textarea{
+  width: 100%;
+  padding: 15rpx;
+  box-sizing: border-box;
+  overflow: scroll;
+  border-radius: 15rpx;
+  border: 3rpx solid #5f357a;
+  margin-bottom: 25rpx;
+}
+.file-upload{
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+}
+.upload{
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #5f357a;
+}
+.file-choose{
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 15rpx;
+  border: 5rpx solid #5f357a; 
+  color: #5f357a;
+  text-align: center;
+  line-height: 80rpx;
+  margin-bottom: 20rpx;
+}
+.filename{
+  position: absolute;
+  top: 60rpx;
+  left: 240rpx;
+  width: 500rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filename image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.tip{
+  font-size: 15px;
+  color: #a79f9f;
+}
+.task_tip{
+  width: 120rpx;
+  height: 50rpx;
+  font-size: 13px;
+  line-height: 50rpx;
+  top: 10rpx;
+  right: 155rpx;
+  position: absolute;
+}
+.input_task{
+  width: 160rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  background-color: #ececec;
+  border-radius: 10rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 15rpx;
+}
+.submit{
+  width: 180rpx;
+  height: 70rpx;
+  position: relative;
+  top: -35rpx;
+  border-radius: 18rpx;
+  background-color: #5f357a;
+  color: #ffffff;
+  text-align: center;
+  line-height: 70rpx;
+  margin: 0 auto;
+}
+.click{
+  transform: scale(0.95);
+}

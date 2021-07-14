@@ -1,0 +1,25 @@
+<view class="body">
+  <view class="article">
+    <view class="title">{{title}}</view>
+    <view class="content">{{content}}</view>
+  </view>
+  <view class="oper">
+    <view class="analysis" hover-class="click">查看分析报告</view>
+    <view class="radio_copy">
+      <image src="/image/square.png" bindtap="copy" style="z-index: 99;"></image>
+      <image class="float_img" src="/image/hook.png" hidden="{{!copyIs}}" ></image>
+      <view class="wenzi">自动复制创新点</view>
+    </view>
+    <view class="analysis go_to" hover-class="click" bindtap="toIdea">前往构思</view>
+  </view>
+  <view class="line-content">
+      <view class="line"></view>
+      <view class="line-title">推荐阅读</view>
+    </view>
+  <view class="about_content" bindtap="toDetail">
+      <image class="about_img" src="/image/about.jpg" mode="aspectFill"></image>
+      <view class="about_title">这是标题哟</view>
+      <view class="about_message">这里是一些内容</view>
+      <view class="about_time">2021年7月6日</view>
+    </view>
+</view>

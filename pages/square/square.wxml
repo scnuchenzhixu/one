@@ -1,0 +1,19 @@
+<view class="body">
+  <view class="header">TRIZ专利挖掘大赛</view>
+  <view class="choose">
+    <view class="choose_name {{normalShow ? 'select' : 'select_none'}}" bindtap="setNormal">普通</view>
+    <view class="choose_name {{qiyeShow ? 'select' : 'select_none'}}" bindtap="setQiye">企业</view>
+  </view>
+  <view class="list">
+    <block wx:for="{{list}}" wx:key="this">
+      <view class="list_detail" hover-class="click" bindtap="toDetail">
+        <image class="list_img" src="https://i.loli.net/2021/07/12/thQRUYib3fDn2NC.jpg" mode="aspectFill"></image>
+        <view class="list_title">关于电子阅读的专利挖掘需要</view>
+        <view class="list_author">发布者：Trizhi</view>
+        <view class="list_time">2021-7-12</view>
+        <view class="list_money">￥1000<text style="font-size: 12px;"> 起</text></view>
+        <view class="list_to">前往查看 ></view>
+      </view>
+    </block>
+  </view>
+</view>

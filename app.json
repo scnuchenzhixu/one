@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/squareDetail/squareDetail",
+    "pages/square/square",
+    "pages/vip/vip",
+    "pages/detail/detail",
+    "pages/person/person",
+    "pages/idea/idea",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#1296db",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [{
+            "iconPath": "/image/home_none.png",
+            "selectedIconPath": "/image/home_select.png",
+            "pagePath": "pages/index/index",
+            "text": "首页"
+        },
+        {
+          "iconPath": "/image/idea_none.png",
+          "selectedIconPath": "/image/idea_select.png",
+          "pagePath": "pages/square/square",
+          "text": "创意广场"
+      },
+        {
+          "iconPath": "/image/person_none.png",
+          "selectedIconPath": "/image/person_select.png",
+          "pagePath": "pages/person/person",
+          "text": "我的"
+        }
+    ]
+},
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
