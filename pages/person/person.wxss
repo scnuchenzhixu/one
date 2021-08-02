@@ -76,6 +76,13 @@
   position: relative;
   left: 450rpx;
 }
+.contact_btn {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  background: salmon;
+  opacity: 0;
+}
 .change{
   transform: scale(0.98,0.95);
   transition: all 0.5s linear;

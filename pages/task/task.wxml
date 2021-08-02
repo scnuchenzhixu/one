@@ -1,0 +1,19 @@
+<view class="body">
+  <view class="header">
+    <image class="robot_img" src="/image/AI.png" mode="aspectFill"></image>
+    <view class="header_tips">请选择任务:</view>
+  </view>
+  <view class="content">
+    <block wx:for="111" wx:key="this">
+      <view class="content_list">
+        <view class="content_img">
+          <image src="https://i.loli.net/2021/07/31/DjJvfZLM4s8OICB.jpg" mode="aspectFill"></image>
+        </view>
+        <view class="content_text">
+          <view class="text_title">这里是标题</view>
+          <view class="text_btn" hover-class="click" bindtap="toDetail">前往提交</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

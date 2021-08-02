@@ -1,10 +1,29 @@
 <view class="body">
   <view class="header" style="padding-top:{{statusBarHeight}}px;">
-    <view  class="head_img" bindtap="back">
+    <view class="head_img" bindtap="back">
       <image src="/image/back.png"></image>
     </view>
     <view class="head_title">会员中心</view>
     <view class="card">
+      <image class="crown" src="/image/crown.png"></image>
+      <view class="user">
+        <image class="user_img" src="{{src}}"></image>
+        <view class="user_name">{{nickName}}</view>
+      </view>
+      <view class="others">
+        <view class="title_number">
+          <view class="title">积分</view>
+          <view class="number">0</view>
+        </view>
+        <view class="title_number">
+          <view class="title">金币</view>
+          <view class="number">920</view>
+        </view>
+        <view class="title_number">
+          <view class="title">优惠卷</view>
+          <view class="number">3</view>
+        </view>
+      </view>
     </view>
   </view>
 </view>

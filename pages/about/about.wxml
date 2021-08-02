@@ -1,0 +1,41 @@
+<view class="body">
+  <view class="system">
+    <view class="title">
+      <view class="line"></view>
+      <view class="line-title">系统简介</view>
+    </view>
+    <image class="img" src="https://i.loli.net/2021/07/15/nRspaXgiElNCAQw.jpg" mode="aspectFill"></image>
+    <view class="content"><text style="font-weight: 550;color: #00008B;">发明构思</text>
+      是广州市奇之信息技术有限公司研发的一款发明问题引导与专利撰写的辅助系统。用户通过此平台可以获得发明灵感，寻找技术缺口，撰写全新发明专利。它是面向发明人、专利工程师、高校学生等需要寻找发明想法，进行专利挖掘，撰写专利文件的平台，结合大数据和人工智能技术，极大缩短研究时间，给用户带来完全不一样的检索与构思体检。</view>
+  </view>
+  <view class="company">
+    <view class="title">
+      <view class="line"></view>
+      <view class="line-title">公司简介</view>
+    </view>
+    <image class="img" src="https://i.loli.net/2021/07/15/ur72HROKmDSdwVi.jpg" mode="aspectFill"></image>
+    <view class="content"><text style="font-weight: 550;color: #00008B;">广州市奇之信息技术有限公司</text>——专利微导航研究者，基于人工智能的微导航技术，让发明专利创新效率提升十倍。奇之信息由百度资深工程师创立，由北京大学、华南师范大学等高端团队组建。从事基于人工智能技术辅助知识产权创作，目前已获投资，并在大学城落地新的办公基地。我们专注于人工智能技术的研究。希望能推动国内，机器辅助创新这一事业的进程。</view>
+    <image class="img" src="https://i.loli.net/2021/07/15/sv9UCKjw6qJEDFZ.jpg" mode="aspectFill"></image>
+  </view>
+  <view class="application">
+    <view class="title">
+      <view class="line"></view>
+      <view class="line-title">相关应用</view>
+    </view>
+    <view class="list">
+      <image class="list_img" src="/image/app1.png"></image>
+      <view class="list_content"><text style="color:#191970;">高价值专利推理系统</text>是用户进行发明构思的核心平台。在这里，用户可以对自己已有的想法进行进一步的完善和扩散。</view>
+      <view class="goto">前往 ></view>
+    </view>
+    <view class="list">
+      <image class="list_img" src="/image/app2.png"></image>
+      <view class="list_content"><text style="color:#191970;">专利查新检查器</text>是用户对想法进行查新检查的平台。在这里，系统会给用户提供全面的技术查新和建议，确保想法的新颖性。</view>
+      <view class="goto">前往 ></view>
+    </view>
+    <view class="list">
+      <image class="list_img" src="/image/app3.png"></image>
+      <view class="list_content"><text style="color:#191970;">专利自动撰写系统</text>是用户在想法形成后，进行专利自动生成的平台。在这里，系统会根据用户提供的想法，自动生成相应的专利。</view>
+      <view class="goto">前往 ></view>
+    </view>
+  </view>
+</view>

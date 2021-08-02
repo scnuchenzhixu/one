@@ -1,0 +1,174 @@
+.body{
+  width: 750rpx;
+  height: 100vh;
+  padding: 15rpx 25rpx 30rpx 25rpx;
+  box-sizing: border-box;
+  /* overflow: scroll; */
+}
+.require_name,.require_money{
+  width: 100%;
+  height: 160rpx;
+}
+.all_title{
+  width: 100%;
+  height: 60rpx;
+  /* font-size: 14px; */
+  line-height: 60rpx;
+}
+.bitian{
+  color: red;
+  /* position: relative;
+  top: -10rpx; */
+}
+.name_input,.money_input{
+  width: 100%;
+  height: 70rpx;
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  background-color: #E8E8E8;
+}
+.require_task{
+  width: 100%;
+  height: 400rpx;
+}
+.task_input{
+  width: 100%;
+  height: 320rpx;
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  background-color: #E8E8E8;
+}
+.task_input textarea{
+  width: 100%;
+}
+.money_input{
+  width: 150rpx;
+}
+.require_img{
+  width: 100%;
+  height: 400rpx;
+}
+.upload_img{
+  width: 100%;
+  height: 320rpx;
+  border-radius: 10rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #E8E8E8;
+  /* border: 1px solid #5f357a; */
+}
+.dott_line{
+  width: 320rpx;
+  height: 180rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dotted #5f357a;
+  background-color: #fff;
+}
+.choose_img{
+  width: 300rpx;
+  height: 160rpx;
+  position: relative;
+}
+.show_img{
+  width: 100%;
+  height: 100%;
+}
+.cancel_img{
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  z-index: 999;
+}
+.cross_view{
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 画个加号 */
+.cross{
+  width: 100rpx;
+  height: 5rpx;
+  position: relative;
+  background-color: #5f357a;
+}
+/* 使用伪类实现 */
+.cross::before{
+  content: '';
+  position: absolute;
+  width: 5rpx;
+  height: 100rpx;
+  background-color: #5f357a;
+  top: -50rpx;
+  left: 50rpx;
+}
+.img_btn{
+  width: 320rpx;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.require_file{
+  width: 100%;
+  height: 200rpx;
+}
+.upload_title{
+  width: 160rpx;
+}
+.title_btn{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+}
+.opload_btn,.img_btn_op{
+  width: 120rpx;
+  height: 50rpx;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 50rpx;
+  background-color: #5f357a;
+}
+.file_content{
+  width: 100%;
+  height: 120rpx;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+  background-color: #E8E8E8;
+  margin-top: 10rpx;
+}
+.bottom{
+  width: 100%;
+  height: 100rpx;
+  /* position: fixed;
+  bottom: 20rpx; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.bottom_btn{
+  width: 150rpx;
+  height: 70rpx;
+  border-radius: 15rpx;
+  background: #5f357a;
+  text-align: center;
+  line-height: 70rpx;
+  color: #fff;
+}
+

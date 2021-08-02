@@ -5,6 +5,14 @@
   box-sizing: border-box;
   background-color: #ececec;
 }
+.header{
+  width: 100%;
+  height: 308rpx;
+}
+.header image{
+  width: 100%;
+  height: 100%;
+}
 .choose{
   width: 200rpx;
   height: 50rpx;
@@ -76,7 +84,7 @@
   line-height: 50rpx;
 }
 .list_time{
-  width: 140rpx;
+  width: 160rpx;
   height: 50rpx;
   margin-top: 5rpx;
   background: #5f357a;
@@ -102,4 +110,24 @@
   color: #1296db;
   right: 8rpx;
   bottom: 8rpx;
+}
+.view_task,.require{
+  width: 140rpx;
+  height: 60rpx;
+  font-size: 14px;
+  text-align: center;
+  line-height: 60rpx;
+  color: #fff;
+  opacity: 0.98;
+  border-radius: 5rpx;
+  position: fixed;
+  right: 0
+}
+.view_task{
+  top: 500rpx;
+  background-color: #CCCC00;
+}
+.require{
+  top: 580rpx;
+  background-color: #FF9966;
 }

@@ -5,13 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    taskNumber: "123456"
+    taskNumber: "123456", //任务码
+    list: {}, //详细信息
+    acceptTask: false, //是否已经结束任务
   },
   //复制任务码
   copyTask() {
     let that = this
     wx.setClipboardData({
-      data: that.data.taskNumber,
+      data: that.data.list.taskcode,
       success(res) {
         console.log("复制成功")
         // wx.getClipboardData({
@@ -29,18 +31,30 @@ Page({
       }
     })
   },
-  //跳转到提交构思界面
-  toDetail(){
-    let that = this
-    wx.navigateTo({
-      url: '/pages/idea/idea?taskNumber='+that.data.taskNumber,
+  //接受任务
+  accept(){
+    this.setData({
+      acceptTask: true
+    })
+  },
+  //图片加载失败时
+  imgfail(){
+    console.log("图片加载失败")
+    let imgsrc = 'list.imgsrc'
+    this.setData({
+      [imgsrc]: '/image/fail.png'
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //console.log(options)
+    let list = JSON.parse(options.list)
+    this.setData({
+      list: list
+    })
+    console.log(this.data.list)
   },
 
   /**

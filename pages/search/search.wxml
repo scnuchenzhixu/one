@@ -1,0 +1,29 @@
+<view class="body">
+  <view class="header" style="padding-top: {{statusBarHeight}}px;">
+    <view class="head_img" bindtap="back">
+      <image src="/image/back.png"></image>
+    </view>
+    <view class="head_title">搜索中心</view>
+    <view class="search">
+      <input class="search_input" placeholder="发明构思有超过5000份创新" type="text" />
+      <image src="/image/searchlittle.png"></image>
+    </view>
+  </view>
+  <view class="condition">
+    <view class="choose_plate">
+      <block wx:for="{{plate}}" wx:key="this">
+        <view class="plate_img_text {{index==plateIndex ? 'plate_img_text_select' : ''}}" data-index="{{index}}"
+          bindtap="plateIndex">
+          <image src="{{index==plateIndex? item.imgSelect : item.imgNone}}"></image>
+          <text class="text_none {{index==plateIndex ? 'text_select' : ''}}">{{item.value}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="choose_about">
+      <block wx:for="{{about}}" wx:key="this">
+        <view class="about {{index==aboutIndex ? 'about_select' : ''}}" data-index="{{index}}" bindtap="aboutIndex">
+          {{item}}</view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+<!-- <view class="body">
+  <view class='warp'>
+    <view wx:for="{{arr}}" class='bg_cl'>1</view>
+  </view>
+  <view class='bottom'>
+    <view class="loading">
+      <text></text>
+      <text></text>
+      <text></text>
+      <text></text>
+      <text></text>
+    </view>
+  </view>
+</view> -->
+<view>
+  <view wx:for="{{Arr}}" style="height: 200rpx;background: #FF1493;width:100vw;">
+    {{item}}
+  </view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+  <view style="width: 100vw;height:200rpx;background: #9400D3;">123</view>
+</view>

@@ -1,0 +1,57 @@
+<view class="body">
+  <view class="require_name">
+    <view class="all_title">需求名称 <text class="bitian">*</text></view>
+    <view class="name_input">
+      <input type="text" bindinput="inputName" />
+    </view>
+  </view>
+  <view class="require_task">
+    <view class="all_title">任务介绍 <text class="bitian">*</text></view>
+    <view class="task_input">
+      <textarea name="" id="" maxlength="-1" bindinput="inputTask"></textarea>
+    </view>
+  </view>
+  <view class="require_money">
+    <view class="all_title">任务金额 <text class="bitian">*</text></view>
+    <view class="money_input">
+      <input type="text" bindinput="inputMoney" />
+    </view>
+  </view>
+  <view class="require_img">
+    <view class="all_title">上传图片 <text class="bitian">*</text></view>
+    <view class="upload_img">
+      <view class="dott_line">
+        <!-- 取消选择的图片按钮 -->
+        <image class="cancel_img" src="/image/del.png" bindtap="cancelImg" hidden="{{!imageChoose}}"></image>
+        <!-- 选择图片之后显示图片 -->
+        <block wx:if="{{imageChoose}}">
+          <view class="choose_img">
+            <image class="show_img" src="{{imgsrc}}" mode="aspectFill"></image>
+          </view>
+        </block>
+        <block wx:else>
+          <!-- 包含加号的一个容器,方便点击 -->
+          <view class="cross_view" hover-class="click" bindtap="uploadImg">
+            <view class="cross"></view>
+          </view>
+        </block>
+      </view>
+      <view class="img_btn">
+        <view class="img_btn_op" hover-class="click" bindtap="preview">预览</view>
+        <view class="img_btn_op" hover-class="click">上传</view>
+      </view>
+    </view>
+    <!-- <image src="http://59.110.237.12:8009/media/taskimages/3.jfif" mode="aspectFill"></image> -->
+  </view>
+  <view class="require_file">
+    <view class="title_btn">
+      <view class="all_title upload_title">上传附件</view>
+      <view class="opload_btn" hover-class="click" bindtap="uploadChooseFile">上传</view>
+    </view>
+    <view class="file_content">{{filename}}</view>
+  </view>
+  <view class="bottom">
+    <view class="bottom_btn" hover-class="click">重置</view>
+    <view class="bottom_btn" hover-class="click" bindtap="submit">发布</view>
+  </view>
+</view>

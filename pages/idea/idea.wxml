@@ -2,17 +2,18 @@
   <view class="title">提交构思</view>
   <view class="input-content">
     <view class="name">姓名</view>
-    <input type="text" placeholder="请输入名字" class="content-input" bindinput="inputName"></input>
+    <input type="text" placeholder="请输入名字" class="content-input" bindinput="inputName"
+    bindblur="isName"></input>
     <view class="name">手机</view>
-    <input type="text" placeholder="请输入联系方式" class="content-input" bindinput="inputPhone"></input>
+    <input type="text" placeholder="请输入联系方式" class="content-input" bindinput="inputPhone" bindblur="isPhone"></input>
     <view class="name">所属公司/结构/组织</view>
     <input type="text" placeholder="请输入所属公司/结构/组织" class="content-input" bindinput="inputCompany"></input>
     <view class="name">邮箱</view>
-    <input type="text" placeholder="请输入邮箱地址" class="content-input" bindinput="inputEmail"></input>
+    <input type="text" placeholder="请输入邮箱地址" class="content-input" bindinput="inputEmail" bindblur="isEmail"></input>
     <view class="name">构思详细描述</view>
     <view class="content-textarea">
       <textarea name="" id="" maxlength="-1 " cursor-spacing="30"
-        style="font-size: 18px;width: 690rpx; overflow: scroll;" bindinput="inputDetail"></textarea>
+        style="font-size: 14px;width: 660rpx; overflow: scroll;" bindinput="inputDetail"></textarea>
     </view>
   </view>
   <view class="file-upload">
@@ -27,5 +28,5 @@
       <input style="font-size:12px;" type="text" placeholder="非必填" value="{{taskNumber}}"></input>
     </view>
   </view>
-  <view class="submit" hover-class="click">提交</view>
+  <view class="submit" bindtap="submit" hover-class="click">提交</view>
 </view>

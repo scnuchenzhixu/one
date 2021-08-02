@@ -4,5 +4,6 @@
   "navigationBarTextStyle": "white",
   "navigationBarTitleText": "创意广场",
   "backgroundColor": "#eeeeee",
-  "backgroundTextStyle": "light"
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": true
 }

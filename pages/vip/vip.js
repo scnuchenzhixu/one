@@ -6,6 +6,8 @@ Page({
    */
   data: {
     statusBarHeight: 0, //刘海高度
+    nickName: "", //名称
+    src: "", //头像
   },
   //返回上一层界面
   back(){
@@ -17,9 +19,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     let barHeight = wx.getStorageSync("statusBarHeight")
     this.setData({
-      statusBarHeight: barHeight
+      statusBarHeight: barHeight,
+      nickName: options.nickName,
+      src: options.src
     })
   },
 

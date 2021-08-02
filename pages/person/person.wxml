@@ -33,13 +33,14 @@
       <image class="app_icon" src="/image/kefu.png"></image>
       <view class="app_name">联系客服</view>
       <image class="go_to" src="/image/go_to.png"></image>
+      <button class='contact_btn' open-type='contact' bindcontact="handleContact"></button> 
     </view>
     <view class="list" hover-class="change">
       <image class="app_icon" src="/image/wechat.png"></image>
       <view class="app_name">关注公众号</view>
       <image class="go_to" src="/image/go_to.png"></image>
     </view>
-    <view class="list" hover-class="change">
+    <view class="list" hover-class="change" bindtap="toAbout">
       <image class="app_icon" src="/image/team.png"></image>
       <view class="app_name">关于我们</view>
       <image class="go_to" src="/image/go_to.png"></image>

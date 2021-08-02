@@ -55,7 +55,7 @@
   line-height: 50rpx;
 }
 .time{
-  width: 140rpx;
+  width: 160rpx;
   height: 50rpx;
   position: absolute;
   right: 5rpx;
@@ -113,7 +113,7 @@
 }
 .process{
   width: 100%;
-  height: 750rpx;
+  height: 1070rpx;
   position: relative;
   margin-top: 15rpx;
   padding: 10rpx 25rpx;  
@@ -126,6 +126,10 @@
 .process_title{
   font-size: 16px;
   color: #5f357a;
+}
+.process_img{
+  width: 100%;
+  height: 312rpx;
 }
 .detail_text{
   width: 100%;

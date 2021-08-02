@@ -12,7 +12,7 @@ Page({
     detailContent: "", //填写的详细描述内容
     path: '', //上传的文件目录路径
     filename: '', //上传的文件名字
-    taskNumber: '',//任务码
+    taskNumber: '', //任务码
   },
   //输入名字
   inputName: function (e) {
@@ -21,7 +21,20 @@ Page({
     this.setData({
       name: name
     })
-    console.log(this.data.name)
+    //console.log(this.data.name)
+  },
+  //输入名字是否合法
+  isName() {
+    if (this.data.name.length > 8) {
+      wx.showToast({
+        title: '名字字符不能超过8个长度',
+        icon: 'none',
+        duration: 1500
+      })
+      // this.setData({
+      //   name: ""
+      // })
+    }
   },
   //输入电话信息
   inputPhone: function (e) {
@@ -30,7 +43,23 @@ Page({
     this.setData({
       phone: phone
     })
-    console.log(this.data.phone)
+    //console.log(this.data.phone)
+  },
+  //判断输入电话号码是否合理
+  isPhone() {
+    if (!this.isEmpty(this.data.phone)) {
+      let phone = /^[1][3,4,5,6,7,8,9][0-9]{9}$/
+      if (!phone.test(this.data.phone)) {
+        wx.showToast({
+          title: '请输入合法的手机号码',
+          icon: 'none',
+          duration: 1500
+        })
+        // this.setData({
+        //   phone: ""
+        // })
+      }
+    }
   },
   //输入公司信息
   inputCompany: function (e) {
@@ -39,7 +68,7 @@ Page({
     this.setData({
       company: company
     })
-    console.log(this.data.company)
+    //console.log(this.data.company)
   },
   //输入邮箱信息
   inputEmail: function (e) {
@@ -48,16 +77,30 @@ Page({
     this.setData({
       email: email
     })
-    console.log(this.data.email)
+    //console.log(this.data.email)
+  },
+  //判断输入的邮箱信息是否合理
+  isEmail() {
+    var email = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/
+    if(!this.isEmpty(this.data.email)){
+      if (!email.test(this.data.email)) {
+        wx.showToast({
+          title: '请输入正确的邮箱',
+          icon: 'none',
+          duration: 1500
+        })
+       }
+    }
+    
   },
   //输入描述详细信息
   inputDetail: function (e) {
     //console.log(e.detail.value)
     let detail = e.detail.value
     this.setData({
-      detail: detail
+      detailContent: detail
     })
-    console.log(this.data.detail)
+    //console.log(this.data.detail)
   },
   //上传文件
   uploadFile: function () {
@@ -71,7 +114,7 @@ Page({
         var filename = res.tempFiles[0].name;
         var newfilename = filename + "";
 
-        let ifTrue = !(newfilename.indexOf(".pdf") == -1)|| !(newfilename.indexOf(".doc") == -1)|| !(newfilename.indexOf(".dock") == -1) //判断文件类型是否为doc,dock,pdf
+        let ifTrue = !(newfilename.indexOf(".pdf") == -1) || !(newfilename.indexOf(".doc") == -1) || !(newfilename.indexOf(".dock") == -1) //判断文件类型是否为doc,dock,pdf
         console.log(ifTrue)
         if (size <= 10485760 && ifTrue) { //限制了文件的大小和具体文件类型
           that.setData({
@@ -80,7 +123,7 @@ Page({
           })
         } else {
           wx.showToast({
-            title: '文件大小不能超过4MB,格式必须为doc,dock,pdf！',
+            title: '文件大小不能超过10MB,格式必须为doc,dock,pdf！',
             icon: "none",
             duration: 2000,
             mask: true
@@ -96,14 +139,57 @@ Page({
       filename: '' //上传的文件名字
     })
   },
+  //判断字符是否为空的方法
+  isEmpty(obj) {
+    if (typeof obj == "undefined" || obj == null || obj == "") {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  //提交
+  submit() {
+    let that = this
+    console.log(this.data.name, this.data.phone, this.data.company, this.data.detailContent)
+    let flag = this.isEmpty(this.data.name) || this.isEmpty(this.data.phone) || this.isEmpty(this.data.company) || this.isEmpty(this.data.detailContent)
+    //console.log(flag)
+    if (flag) {
+      wx.showToast({
+        title: '请检查内容是否全部填写',
+        icon: 'none'
+      })
+    } else {
+      console.log("内容已全部填写")
+      wx.request({
+        url: 'http://59.110.237.12:8009/getpostconce/',
+        data: {
+          name: that.data.name,
+          phone: that.data.phone,
+          company: that.data.company,
+          email: that.data.email,
+          concedescribe: that.data.detailContent,
+          file: that.data.path
+        },
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded" //POST方式是这个
+          },
+        method: 'POST',
+        success: function (res) {
+          console.log("success", res)
+        },
+        fail: function (res) {
+          console.log("fail", res)
+        }
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      console.log("options有值")
-      this.setData({
-        taskNumber: options.taskNumber
-      })
+    this.setData({
+      taskNumber: options.taskNumber
+    })
   },
 
   /**

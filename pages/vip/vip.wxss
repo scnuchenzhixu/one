@@ -33,6 +33,9 @@
 .card{
   width: 90%;
   height: 320rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
   position: absolute;
   left: 0;
   right: 0;
@@ -41,4 +44,54 @@
   border-radius: 25rpx;
   background-image: linear-gradient(to right,#232b45,#474d65);
   box-shadow:0px 0px 10px #000;
+}
+.crown{
+  width: 150rpx;
+  height: 150rpx;
+  position: absolute;
+  bottom: -16rpx;
+  right: -11rpx;
+  transform: rotate(-45deg);
+}
+.user{
+  width: 100%;
+  height: 120rpx;
+  position: relative;
+  left: 20rpx;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+.user_img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.user_name{
+  width: 500rpx;
+  height: 120rpx;
+  margin-left: 20rpx;
+  font-size: 17px;
+  color: #fff;
+  line-height: 120rpx;
+}
+.others{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  margin-top: 45rpx;
+}
+.title_number{
+  width: 150rpx;
+  height: 100rpx;
+}
+.title,.number{
+  width: 150rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: orange;
+}
+.number{
+  color: #fff;
 }

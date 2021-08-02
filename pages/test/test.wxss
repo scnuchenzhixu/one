@@ -1,0 +1,81 @@
+.body{
+  width: 100vw;
+  height: 110vh;
+  background-color: sandybrown;
+}
+.warp {
+  display: flex;
+  flex-flow: column;
+}
+
+.bg_cl {
+  width: 100%;
+  flex: 1;
+  height: 400rpx;
+  background: pink;
+}
+
+.bg_cl:nth-child(2),
+.bg_cl:nth-child(4) {
+  background: purple;
+}
+
+.bottom {
+  line-height: 50rpx;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*过渡动画  */
+.loading {
+  width: 148rpx;
+  height: 44rpx;
+}
+
+.loading text {
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: #999;
+  -webkit-animation: load 1.04s ease infinite;
+}
+
+.loading text:last-child {
+  margin-right: 0px;
+}
+
+@-webkit-keyframes load {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.2;
+    -webkit-transform: scale(.3);
+  }
+}
+
+.loading text:nth-child(1) {
+  -webkit-animation-delay: 0.13s;
+}
+
+.loading text:nth-child(2) {
+  -webkit-animation-delay: 0.26s;
+}
+
+.loading text:nth-child(3) {
+  -webkit-animation-delay: 0.39s;
+}
+
+.loading text:nth-child(4) {
+  -webkit-animation-delay: 0.52s;
+}
+
+.loading text:nth-child(5) {
+  -webkit-animation-delay: 0.65s;
+}

@@ -11,13 +11,13 @@ Page({
     showMotal: false, //是否显示修改昵称模态框
     nickName: "", //用户昵称
     tempName: "", //输入框中的昵称
-    src: "" ,//头像
+    src: "", //头像
   },
   //获取用户信息
   getUserMessage(e) {
-    if(this.data.hasUserInfo){ //有信息之后就不需要重复点击登陆了
+    if (this.data.hasUserInfo) { //有信息之后就不需要重复点击登陆了
       return
-    }else{
+    } else {
       wx.getUserProfile({
         desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
         success: (res) => {
@@ -33,63 +33,73 @@ Page({
       })
     }
   },
-   //显示修改昵称模态框
-   showMotal(){
+  //显示修改昵称模态框
+  showMotal() {
     this.setData({
       showMotal: true
     })
   },
   //隐藏修改昵称模态框
-  hideMotal(){
+  hideMotal() {
     this.setData({
       showMotal: false
     })
   },
   //文本框里面的内容
-  inputNickName(e){
+  inputNickName(e) {
     let name = e.detail.value
     this.setData({
       tempName: name
     })
   },
   //点击取消
-  cencel(){
+  cencel() {
     this.setData({
       showMotal: false
     })
   },
   //点击确定
-  sure(){
+  sure() {
     this.setData({
       showMotal: false,
       nickName: this.data.tempName
     })
   },
   //更改头像
-  changeSrc(){
+  changeSrc() {
     let that = this
-    if(this.data.hasUserInfo){
+    if (this.data.hasUserInfo) {
       wx.chooseImage({
         count: 1,
-        success: function(res){
+        success: function (res) {
           that.setData({
             src: res.tempFilePaths
           })
-          console.log("上传图片成功",res)
+          console.log("上传图片成功", res)
         },
-        fail: function(res){
-          console.log("上传图片失败",res)
+        fail: function (res) {
+          console.log("上传图片失败", res)
         }
       })
-    }
-    else{
+    } else {
       return
     }
   },
   //跳转到vip界面
-  toVip(){
+  toVip() {
     wx.navigateTo({
-      url: '/pages/vip/vip',
+      url: '/pages/vip/vip?nickName=' + this.data.nickName + '&src=' + this.data.src,
+    })
+  },
+  //客服信息功能
+  handleContact(e) {
+    console.log(e.detail.path)
+    console.log(e.detail.query)
+  },
+  //跳转至关于我们界面
+  toAbout() {
+    wx.navigateTo({
+      url: '/pages/about/about',
     })
   },
   /**

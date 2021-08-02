@@ -1,7 +1,7 @@
 <view class="body">
   <view class="classify">
-    <image src="/image/logo.png"></image>
-    <view class="user">用户分类：</view>
+    <image class="logo_img" src="/image/logo.png"></image>
+    <!-- <view class="user">用户分类：</view>
     <view class="selector" bindtap="selectTap">
       <view class="selected">{{selectData[index]}}</view>
       <view class="img">
@@ -11,21 +11,26 @@
         <view class="option" wx:for="{{selectData}}" wx:for='{{selectData}}' wx:key='this' data-index='{{index}}'
           bindtap='optionTap' style="border-top:{{index==0? '1px solid #efefef;':''}}">{{item}}</view>
       </view>
-    </view>
+    </view> -->
+    <image class="search_img" src="/image/search.png" bindtap="toSearch"></image>
   </view>
+  <!-- 轮播图 -->
   <view class="lunbo">
     <view class="line-content">
       <view class="line"></view>
       <view class="line-title">这是一个专利分析小程序，有很多工具可以用</view>
     </view>
-    <view class="lun_tip">可以根据不同的用户类别筛选想看的内容</view>
+    <!-- <view class="lun_tip">可以根据不同的用户类别筛选想看的内容</view> -->
     <view class="swiper_content">
-      <swiper class="swiper_home" circular="true" bindchange="getIndex" current="{{swiperIndex}}" next-margin="100rpx"
-        previous-margin="100rpx">
+      <swiper class="swiper_home" circular="true" bindchange="getIndex" current="{{swiperIndex}}" next-margin="120rpx"
+        previous-margin="120rpx">
         <block wx:for="{{lunboData}}" wx:key="index">
           <swiper-item bindtap='clickChange' data-index="{{index}}">
+            <!-- 根据索引值是否选中决定当下轮播图是放大还是缩小 -->
             <view class='col {{swiperIndex == index ? "selected_lunbo" : ""}}'>
-              <image class="swiper_img" src="{{item.imgsrc}}" mode="aspectFill"></image>
+              <view class="swiper_img {{swiperIndex == index ? 'swiper_img_select' : ''}}">
+                <image src="{{item.imgsrc}}" mode="aspectFill" binderror="imageFail" data-index="{{index}}" data-name="lunboData"></image>
+              </view>
             </view>
             <view class="explain" wx:if="{{swiperIndex == index}}">{{item.describe}}</view>
           </swiper-item>
@@ -34,22 +39,31 @@
     </view>
     <view class="dots">
       <block wx:for="{{lunboData}}" wx:key="index">
+        <!-- 根据是否为选中的轮播图改变轮播点的样式 -->
         <view class="dot {{swiperIndex == index ? 'active' : ''}}"></view>
       </block>
     </view>
   </view>
+  <!-- 相关应用部分 -->
   <view class="application">
     <view class="line-content">
       <view class="line"></view>
       <view class="line-title">相关应用</view>
     </view>
-    <view class="lun_tip">以下运用专利分析报告使用</view>
+    <!-- <view class="lun_tip">以下运用专利分析报告使用</view> -->
     <view class="application_content">
-      <image src="https://i.loli.net/2021/07/06/RdVul3w8ZamKEBr.png"></image>
-      <image src="https://i.loli.net/2021/07/06/BnWr2AhX5RCEKav.png"></image>
-      <image src="https://i.loli.net/2021/07/06/o3mRFPti8pVYGfw.png"></image>
-      <image src="https://i.loli.net/2021/07/06/beE3j6YzRMyu4qI.png"></image>
-      <image src="https://i.loli.net/2021/07/06/6EtlcbYsjgCqV1U.png"></image>
+      <view class="application_content_list" style="box-shadow:3px 3px 5px #000;">
+        <image src="/image/app1.png"></image>
+        <view class="application_content_list_text">专利推理系统</view>
+      </view>
+      <view class="application_content_list">
+        <image src="/image/app2.png"></image>
+        <view class="application_content_list_text">专利查新</view>
+      </view>
+      <view class="application_content_list">
+        <image src="/image/app3.png"></image>
+        <view class="application_content_list_text">专利自动撰写系统</view>
+      </view>
     </view>
   </view>
   <view class="about">
@@ -57,6 +71,8 @@
       <view class="line"></view>
       <view class="line-title">关于</view>
     </view>
+    <view class="clear_choose" hover-class="click" bindtap="clearAll">清除筛选</view>
+    <!-- 根据展开选择栏的数目决定状态选择栏的高度 -->
     <view class="multi" style="height: {{multiHeight}}rpx">
       <view class="multi_content" bindtap="themeShow">
         <view class="multi_text">按主题</view>
@@ -86,38 +102,63 @@
       <view class="sortData">
         <view class="wenzi">排序：</view>
         <view class="xuanze" bindtap="chooseSort">
-          <view class="wenzi">{{sortData[sortIndex]}}</view>
+          <view class="wenzi_choose">{{sortData[sortIndex].descri}}</view>
           <image class="shaixuan_img {{sortShow ? 'show_choose' : ''}}" src="/image/xia.png">
           </image>
-          <view class="choose_content {{sortShow ? '' : 'choose_show'}}">
+          <view class="choose_content" style="height: {{sortHeight}}rpx">
             <view class="choose_item wenzi" wx:for="{{sortData}}" wx:key="index" data-index="{{index}}"
-              bindtap="getSort">{{item}}</view>
+              bindtap="getSort">{{item.descri}}</view>
           </view>
         </view>
       </view>
       <view class="userData">
         <view class="wenzi">用户：</view>
         <view class="xuanze" bindtap="chooseUser">
-          <view class="wenzi">{{userData[userIndex]}}</view>
+          <view class="wenzi_choose">{{userData[userIndex].name}}</view>
           <image class="shaixuan_img {{userShow ? 'show_choose' : ''}}" src="/image/xia.png">
           </image>
-          <view class="choose_content {{userShow ? '' : 'choose_show'}}">
+          <!-- 根据js给的筛选条件的数组长度决定筛选栏的高度 -->
+          <view class="choose_content" style="height: {{userHeight}}rpx">
             <view class="choose_item wenzi" wx:for="{{userData}}" wx:key="index" data-index="{{index}}"
-              bindtap="getUser">{{item}}</view>
+              bindtap="getUser">{{item.name}}</view>
           </view>
         </view>
       </view>
       <view class="confirm" hover-class="click" bindtap="conditionSelect">确定筛选</view>
     </view>
     <block wx:for="{{articleList}}" wx:key="this">
-      <view class="about_content" bindtap="toDetail" data-title="{{item.title}}" data-content="{{item.describe}}" style="border-top: 10rpx solid {{colorList[index%colorList.length]}}">
-        <image class="about_img" src="{{item.imgsrc}}" mode="aspectFill"></image>
-        <view class="about_text">
-          <view class="about_title">{{item.title}}</view>
-          <view class="about_message">{{item.describe}}</view>
-        </view>
+      <view class="about_content" bindtap="toDetail" data-title="{{item.title}}" data-content="{{item.content}}"
+        data-id="{{item.id}}"
+        style="border-top: 10rpx solid {{colorList[index%colorList.length]}};padding: {{(index+1)%3==0? '0':''}};">
+        <!-- 根据索引值来从选定颜色作为border-top的样式 -->
+        <block wx:if="{{(index+1)%3==0}}">
+          <!-- 索引值为3的倍数的以图片背景+文章标题的形式显示 -->
+          <!-- 只有图片+文章标题显示的文章列表 -->
+          <image class="only_img" src="{{item.imgsrc}}" binderror="imageFail" data-index="{{index}}" data-name="articleList" mode="aspectFill"></image>
+          <text class="only_text">{{item.title}}</text>
+          <view class="views">热度：{{item.views}}</view>
+        </block>
+        <block wx:else>
+          <!-- 其他的正常显示 -->
+          <image class="about_img" src="{{item.imgsrc}}" binderror="imageFail" data-index="{{index}}" data-name="articleList" mode="aspectFill"></image>
+          <view class="about_text">
+            <view class="about_title">{{item.title}}</view>
+            <view class="about_message">{{item.describe}}</view>
+          </view>
+          <view class="views">热度：{{item.views}}</view>
+        </block>
       </view>
     </block>
   </view>
   <view class="idea" bindtap="toIdea" hover-class="click">想法</view>
+  <!-- 底部加载动画 -->
+  <view class='bottom' wx:if="{{loading}}">
+    <view class="loading">
+      <text></text>
+      <text></text>
+      <text></text>
+      <text></text>
+      <text></text>
+    </view>
+  </view>
 </view>

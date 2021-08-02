@@ -1,19 +1,24 @@
 <view class="body">
-  <view class="header">TRIZ专利挖掘大赛</view>
+  <view class="header">
+    <image src="https://i.loli.net/2021/07/21/2JkAfQvsadxRSVn.png" mode="aspectFill"></image>
+  </view>
   <view class="choose">
     <view class="choose_name {{normalShow ? 'select' : 'select_none'}}" bindtap="setNormal">普通</view>
     <view class="choose_name {{qiyeShow ? 'select' : 'select_none'}}" bindtap="setQiye">企业</view>
   </view>
   <view class="list">
-    <block wx:for="{{list}}" wx:key="this">
-      <view class="list_detail" hover-class="click" bindtap="toDetail">
-        <image class="list_img" src="https://i.loli.net/2021/07/12/thQRUYib3fDn2NC.jpg" mode="aspectFill"></image>
-        <view class="list_title">关于电子阅读的专利挖掘需要</view>
-        <view class="list_author">发布者：Trizhi</view>
-        <view class="list_time">2021-7-12</view>
-        <view class="list_money">￥1000<text style="font-size: 12px;"> 起</text></view>
+    <block wx:for="{{showList}}" wx:key="this">
+      <view class="list_detail" hover-class="click" bindtap="toDetail" data-index="{{index}}">
+        <image class="list_img" src="{{item.imgsrc}}" binderror="imageFail" data-name="showList" 
+        data-index="{{index}}" mode="aspectFill"></image>
+        <view class="list_title">{{item.tasktitle}}</view>
+        <view class="list_author">发布者：{{item.publisher}}</view>
+        <view class="list_time">{{item.public_data}}</view>
+        <view class="list_money">￥{{item.award}}<text style="font-size: 12px;"> 起</text></view>
         <view class="list_to">前往查看 ></view>
       </view>
     </block>
   </view>
+  <view class="view_task" hover-class="click" bindtap="toTask">查看任务</view>
+  <view class="require" hover-class="click" bindtap="toRequire">发布需求</view>
 </view>

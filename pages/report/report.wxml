@@ -1,0 +1,36 @@
+<view class="body">
+  <view class="article {{articleShow? 'article_open': ''}}">
+   <view class="article_text">
+    国际空间
+2018年12月3日，这台名为Organaut的突破性3D打印装置，执行“58号远征”（Expedition 58）任务的“联盟MS-11”飞船送往国际空间站。打印机由Invitro的子公司“3D生物打印解决方案”（3D Bioprinting Solutions）公司建造。Invitro随后收到了从国际空间站传回的一组照片，通过这些照片可以看到老鼠甲状腺是如何被打印出来的。美国计划于2019年春季将生物打印机送上国际空间站。 [12] 
+2020年5月5日，中国首飞成功的长征五号B运载火箭上，搭载着新一代载人飞船试验船，船上还搭载了一台“3D打印机”。这是中国首次太空3D打印实验，也是国际上第一次在太空中开展连续纤维增强复合材料的3D打印实验。 [4] 
+海军舰艇
+2014年7月1日，美国海军试验了利用3D打印等先进制造技术快速制造舰艇零件，希望借此提升执行任务速度并降低成本。 [20] 
+2014年6月24日至6月26日，美海军在作战指挥系统活动中举办了第一届制汇节，开展了一系列“打印舰艇”研讨会，并在此期间向水手及其他相关人员介绍了3D打印及增材制造技术。
+美国海军致力于未来在这方面培训水手。采用3D打印及其他先进制造方法，能够显著提升执行任务速度及预备状态，降低成本，避免从世界各地采购舰船配件。
+美国海军作战舰队后勤科副科长Phil Cullom表示，考虑到成本及海军后勤及供应链现存的漏洞，以及面临的资源约束，先进制造与3D打印的应用越来越广，他们设想了一个由技术娴熟的水手支持的先进制造商的全球网络，找出问题并制造产品。 [20] 
+航天科技
+2014年9月底，NASA预计将完成首台成像望远镜，所有元件基本全部通过3D打印技术制造。NASA也因此成为首家尝试使用3D打印技术制造整台仪器的单位。
+　　这款太空望远镜功能齐全，其50.8毫米的摄像头使其能够放进立方体卫星（CubeSat，一款微型卫星）当中。据了解，这款太空望远镜的外管、外挡板及光学镜架全部作为单独的结构直接打印而成，只有镜面和镜头尚未实现。该仪器将于2015年开展震动和热真空测试。
+　　这款长50.8毫米的望远镜将全部由铝和钛制成，而且只需通过3D打印技术制造4个零件即可，相比而言，传统制造方法所需的零件数是3D打印的5-10倍。此外，在3D打印的望远镜中，可将用来减少望远镜中杂散光的仪器挡板做成带有角度的样式，这是传统制作方法在一个零件中所无法实现的。
+   </view>
+   <view class="article_show" wx:if="{{!articleShow}}" bindtap="articleOpen">点击展开
+     <image src="/image/xia.png" style="width: 25rpx;height:25rpx;"></image>
+   </view>
+  </view>
+  <view class="mask" wx:if="{{tipShow}}">
+    <view class="tips">
+      <view class="tips_title">提示</view>
+      <view class="tips_content">继续查看内容需要vip特权</view>
+      <view class="tips_choose">
+        <view class="choose" hover-class="click" bindtap="tryFun">使用免费试用</view>
+        <view class="choose" hover-class="click" bindtap="tryFun">开通会员</view>
+      </view>
+      <view class="chance">剩余机会：1次</view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="choose bottom_choose">下载此报告</view>
+    <view class="choose bottom_choose">专利查新器</view>
+  </view>
+</view>
